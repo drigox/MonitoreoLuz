@@ -47,27 +47,11 @@ public class Panel extends ActionBarActivity {
         boton7=(ToggleButton) findViewById(R.id.boton7);
         boton8=(ToggleButton) findViewById(R.id.boton8);
 
-        //Funcion Click en boton
-        boton1.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View arg0){
-
-                if(boton1.isChecked())
-
-                    mostrar.setText("Botón Personalizado: ON");
-                else
-                    mostrar.setText("Botón Personalizado: OFF");
-                    }
-
-
-
-        });
-
 
 
         //Parseo info enviada desde vista 1
 
-        char[] parseo = new char[ip.length()]; // char para parseo
+        final char[] parseo = new char[ip.length()]; // char para parseo
         for (int i = 0; i < ip.length(); i++) {
             parseo[i] = (char) ip.charAt(i); //parseo
 
@@ -149,7 +133,7 @@ public class Panel extends ActionBarActivity {
                 }
             }
 
-            //------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------
             if(i==7) {                                                          //comprobacion bit 1
 
                 Log.e("largo bitparse", String.valueOf(bitparse.length()));
@@ -161,6 +145,184 @@ public class Panel extends ActionBarActivity {
 
 
         }
+
+        //Funcion Click en boton
+        boton1.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0){
+                int numero2=1;
+                String snumero2= String.valueOf(numero2);
+                String bitcomparar= String.valueOf(parseo[0]);
+
+
+                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
+                    char numeroaux='0';
+                    parseo[0] = numeroaux;                      //Si es 1 lo cambia a 0
+                    mostrar.setText(String.valueOf(parseo));
+                } else {
+                    char numeroaux='1';
+                    parseo[0] = numeroaux;                      //Caso contario 0->1
+                    mostrar.setText(String.valueOf(parseo));
+                    }
+            }
+        });
+
+        // OnCLick boton 2 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        boton2.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0){
+                int numero2=1;
+                String snumero2= String.valueOf(numero2);
+                String bitcomparar= String.valueOf(parseo[1]);
+
+
+                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
+                    char numeroaux='0';
+                    parseo[1] = numeroaux;                      //Si es 1 lo cambia a 0
+                    mostrar.setText(String.valueOf(parseo));
+                } else {
+                    char numeroaux='1';
+                    parseo[1] = numeroaux;                      //Caso contario 0->1
+                    mostrar.setText(String.valueOf(parseo));
+                }
+            }
+        });
+
+        // OnCLick boton 3 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        boton3.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0){
+                int numero2=1;
+                String snumero2= String.valueOf(numero2);
+                String bitcomparar= String.valueOf(parseo[2]);
+
+
+                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
+                    char numeroaux='0';
+                    parseo[2] = numeroaux;                      //Si es 1 lo cambia a 0
+                    mostrar.setText(String.valueOf(parseo));
+                } else {
+                    char numeroaux='1';
+                    parseo[2] = numeroaux;                      //Caso contario 0->1
+                    mostrar.setText(String.valueOf(parseo));
+                }
+            }
+        });
+
+        // OnCLick boton 4 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        boton4.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0){
+                int numero2=1;
+                String snumero2= String.valueOf(numero2);
+                String bitcomparar= String.valueOf(parseo[3]);
+
+
+                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
+                    char numeroaux='0';
+                    parseo[3] = numeroaux;                      //Si es 1 lo cambia a 0
+                    mostrar.setText(String.valueOf(parseo));
+                } else {
+                    char numeroaux='1';
+                    parseo[3] = numeroaux;                      //Caso contario 0->1
+                    mostrar.setText(String.valueOf(parseo));
+                }
+            }
+        });
+
+
+        // OnCLick boton 5 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        boton5.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0){
+                int numero2=1;
+                String snumero2= String.valueOf(numero2);
+                String bitcomparar= String.valueOf(parseo[4]);
+
+
+                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
+                    char numeroaux='0';
+                    parseo[4] = numeroaux;                      //Si es 1 lo cambia a 0
+                    mostrar.setText(String.valueOf(parseo));
+                } else {
+                    char numeroaux='1';
+                    parseo[4] = numeroaux;                      //Caso contario 0->1
+                    mostrar.setText(String.valueOf(parseo));
+                }
+            }
+        });
+
+
+        // OnCLick boton 6 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        boton6.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0){
+                int numero2=1;
+                String snumero2= String.valueOf(numero2);
+                String bitcomparar= String.valueOf(parseo[5]);
+
+
+                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
+                    char numeroaux='0';
+                    parseo[5] = numeroaux;                      //Si es 1 lo cambia a 0
+                    mostrar.setText(String.valueOf(parseo));
+                } else {
+                    char numeroaux='1';
+                    parseo[5] = numeroaux;                      //Caso contario 0->1
+                    mostrar.setText(String.valueOf(parseo));
+                }
+            }
+        });
+
+        // OnCLick boton 7 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        boton7.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0){
+                int numero2=1;
+                String snumero2= String.valueOf(numero2);
+                String bitcomparar= String.valueOf(parseo[6]);
+
+
+                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
+                    char numeroaux='0';
+                    parseo[6] = numeroaux;                      //Si es 1 lo cambia a 0
+                    mostrar.setText(String.valueOf(parseo));
+                } else {
+                    char numeroaux='1';
+                    parseo[6] = numeroaux;                      //Caso contario 0->1
+                    mostrar.setText(String.valueOf(parseo));
+                }
+            }
+        });
+
+        // OnCLick boton 2 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        boton8.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0){
+                int numero2=1;
+                String snumero2= String.valueOf(numero2);
+                String bitcomparar= String.valueOf(parseo[7]);
+
+
+                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
+                    char numeroaux='0';
+                    parseo[7] = numeroaux;                      //Si es 1 lo cambia a 0
+                    mostrar.setText(String.valueOf(parseo));
+                } else {
+                    char numeroaux='1';
+                    parseo[7] = numeroaux;                      //Caso contario 0->1
+                    mostrar.setText(String.valueOf(parseo));
+                }
+            }
+        });
+
     }
 
 }
