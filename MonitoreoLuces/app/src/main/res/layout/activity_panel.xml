@@ -4,40 +4,52 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tablero 1"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageButton
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView1"
-            android:src="@drawable/luz1"/>
-        <ImageButton
+            android:background="@drawable/luz2"
+            android:layout_marginLeft="20dp"/>
+
+         <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:id="@+id/textView1"
+            android:layout_gravity="center"
+            android:textSize="90sp"
+            android:paddingLeft="20dp"/>
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView2"
-            android:src="@drawable/luz1"/>
+            android:background="@drawable/luz2"/>
 
-        </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView3"
-            android:src="@drawable/luz2"/>
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView4"
-            android:src="@drawable/luz2"/>
+            android:text="2"
+            android:id="@+id/textView2"
+            android:layout_gravity="center"
+            android:textSize="90sp"
+            android:paddingLeft="20dp" />
 
 
     </LinearLayout>
@@ -47,16 +59,36 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageButton
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView5"
-            android:src="@drawable/luz2"/>
-        <ImageButton
+            android:id="@+id/boton3"
+            android:background="@drawable/luz2"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:layout_gravity="center"
+            android:textSize="90sp"
+            android:paddingLeft="20dp"/>
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView6"
-            android:src="@drawable/luz2"/>
+            android:id="@+id/boton4"
+            android:background="@drawable/luz2"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="4"
+            android:layout_gravity="center"
+            android:textSize="90sp"
+            android:paddingLeft="20dp" />
 
     </LinearLayout>
 
@@ -65,17 +97,76 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageButton
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView7"
-            android:src="@drawable/luz2"/>
-        <ImageButton
+            android:id="@+id/boton5"
+            android:background="@drawable/luz2"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:layout_gravity="center"
+            android:textSize="90sp"
+            android:paddingLeft="20dp"/>
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView8"
-            android:src="@drawable/luz2"/>
+            android:id="@+id/boton6"
+            android:background="@drawable/luz2"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:layout_gravity="center"
+            android:textSize="90sp"
+            android:paddingLeft="20dp" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/boton7"
+            android:background="@drawable/luz2"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:layout_gravity="center"
+            android:textSize="90sp"
+            android:paddingLeft="20dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/boton8"
+            android:background="@drawable/luz2"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="8"
+            android:layout_gravity="center"
+            android:textSize="90sp"
+            android:paddingLeft="20dp" />
+
+    </LinearLayout>
+
 </LinearLayout>
 
