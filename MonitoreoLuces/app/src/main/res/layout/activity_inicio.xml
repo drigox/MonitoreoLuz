@@ -10,7 +10,7 @@
     <EditText
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/ip"
         android:textSize="30dp"
         android:hint="@string/ip"
         android:gravity="center"
@@ -23,8 +23,7 @@
         android:layout_height="wrap_content"
         android:text="@string/boton"
         android:gravity="center"
-        android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="124dp"
-        android:id="@+id/conexion"/>
+        android:id="@+id/conexion"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
