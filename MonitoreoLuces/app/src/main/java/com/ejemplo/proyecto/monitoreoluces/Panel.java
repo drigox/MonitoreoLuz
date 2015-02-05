@@ -59,15 +59,7 @@ public class Panel extends ActionBarActivity {
                     boton1.performClick();                                      //Click forzado
                 }
             }
-
-
         }
-
-
-
-
-
-
     }
 
 }
