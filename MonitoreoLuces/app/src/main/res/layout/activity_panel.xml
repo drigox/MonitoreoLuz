@@ -18,11 +18,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <ToggleButton
+            android:textOn=""
+            android:textOff=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView1"
-            android:background="@drawable/luz2"
+            android:id="@+id/boton1"
+            android:background="@drawable/toggle"
             android:layout_marginLeft="20dp"/>
 
          <TextView
@@ -35,11 +37,13 @@
             android:textSize="90sp"
             android:paddingLeft="20dp"/>
 
-        <Button
+        <ToggleButton
+            android:textOn=""
+            android:textOff=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView2"
-            android:background="@drawable/luz2"/>
+            android:id="@+id/boton2"
+            android:background="@drawable/toggle"/>
 
         <TextView
             android:layout_width="0dp"
@@ -59,11 +63,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <ToggleButton
+            android:textOn=""
+            android:textOff=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/boton3"
-            android:background="@drawable/luz2"
+            android:background="@drawable/toggle"
             android:layout_marginLeft="20dp"/>
 
         <TextView
@@ -75,11 +81,13 @@
             android:textSize="90sp"
             android:paddingLeft="20dp"/>
 
-        <Button
+        <ToggleButton
+            android:textOn=""
+            android:textOff=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/boton4"
-            android:background="@drawable/luz2"/>
+            android:background="@drawable/toggle"/>
 
         <TextView
             android:layout_width="0dp"
@@ -97,11 +105,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <ToggleButton
+            android:textOn=""
+            android:textOff=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/boton5"
-            android:background="@drawable/luz2"
+            android:background="@drawable/toggle"
             android:layout_marginLeft="20dp"/>
 
         <TextView
@@ -113,11 +123,13 @@
             android:textSize="90sp"
             android:paddingLeft="20dp"/>
 
-        <Button
+        <ToggleButton
+            android:textOn=""
+            android:textOff=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/boton6"
-            android:background="@drawable/luz2"/>
+            android:background="@drawable/toggle"/>
 
         <TextView
             android:layout_width="0dp"
@@ -135,11 +147,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <ToggleButton
+            android:textOn=""
+            android:textOff=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/boton7"
-            android:background="@drawable/luz2"
+            android:background="@drawable/toggle"
             android:layout_marginLeft="20dp"/>
 
         <TextView
@@ -151,11 +165,13 @@
             android:textSize="90sp"
             android:paddingLeft="20dp"/>
 
-        <Button
+        <ToggleButton
+            android:textOn=""
+            android:textOff=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/boton8"
-            android:background="@drawable/luz2"/>
+            android:background="@drawable/toggle"/>
 
         <TextView
             android:layout_width="0dp"
