@@ -23,31 +23,34 @@ import java.net.UnknownHostException;
 
 public class Inicio extends ActionBarActivity {
 
-    private EditText ip;
-    int port= 8080;
-    TextView textResponse;
+    private EditText ip;    //IP que viene dada por el usuario
+    int port= 8080;         //Puerto por defecto
+    TextView textResponse;  //Respuesta desde el servidor
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inicio);
+        setContentView(R.layout.activity_inicio); //XML
 
-        textResponse = (TextView) findViewById(R.id.response);
-        Button conectar = (Button) findViewById(R.id.conexion);
-        ip = (EditText) findViewById(R.id.ip);
+        textResponse = (TextView) findViewById(R.id.response); //Donde se muestra la respuesta del servidor
+        Button conectar = (Button) findViewById(R.id.conexion); //boton conectar
+        ip = (EditText) findViewById(R.id.ip);                  //IP que viene dada por el usuario
 
 
-        conectar.setOnClickListener(conectarOnClickListener);
+        conectar.setOnClickListener(conectarOnClickListener); //Llamada a onClick
     }
 
-    View.OnClickListener conectarOnClickListener = new View.OnClickListener() {
+    View.OnClickListener conectarOnClickListener = new View.OnClickListener() { //Funcion OnClick
 
                @Override
                public void onClick(View arg0) {
-                String tMsg = ip.getText().toString();
-                if(tMsg.equals("")){
+                String tMsg = ip.getText().toString();      //IP
+                if(tMsg.equals("")){                        //Comprobacion de mensaje a enviar
                     tMsg = null;
-                    Toast.makeText(Inicio.this, "IP no escrita", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Inicio.this, "IP no escrita", Toast.LENGTH_SHORT).show(); //
                 }
 
                 MyClientTask myClientTask = new MyClientTask(ip.getText().toString(),
@@ -55,14 +58,7 @@ public class Inicio extends ActionBarActivity {
                         tMsg);
                 myClientTask.execute();
 
-                Toast.makeText(Inicio.this, textResponse.getText().toString(), Toast.LENGTH_SHORT).show();
 
-             /*   Intent i = new Intent(Inicio.this, Panel.class);
-                // Bundle para enviar los datos a la otra vista
-               datos.putString("datos", ip.getText().toString());
-               i.putExtras(datos);
-                startActivity(i);
-            */
             }
         };
 
@@ -70,7 +66,8 @@ public class Inicio extends ActionBarActivity {
 
             String dstAddress;
             int dstPort;
-            String response = "1";
+            public String response = "";
+
             String msgToServer;
 
             MyClientTask(String addr, int port, String msgTo) {
@@ -93,10 +90,10 @@ public class Inicio extends ActionBarActivity {
                     dataInputStream = new DataInputStream(socket.getInputStream());
 
                     if(msgToServer != null){
-                        dataOutputStream.writeUTF(msgToServer);
+                        dataOutputStream.writeUTF(msgToServer); // Envio del mensaje
                     }
 
-                    response = dataInputStream.readUTF();
+                    response = dataInputStream.readUTF();       //Lectura de info desde el servidor
 
                 } catch (UnknownHostException e) {
                     // TODO Auto-generated catch block
@@ -140,6 +137,17 @@ public class Inicio extends ActionBarActivity {
             protected void onPostExecute(Void result) {
                 textResponse.setText(response);
                 super.onPostExecute(result);
+
+                Toast.makeText(Inicio.this, response, Toast.LENGTH_SHORT).show();
+
+
+             Intent i = new Intent(Inicio.this, Panel.class);
+                // Bundle para enviar los datos a la otra vista
+                Bundle datos = new Bundle();
+               datos.putString("datos", response);
+               i.putExtras(datos);
+                startActivity(i);
+
             }
 
         }

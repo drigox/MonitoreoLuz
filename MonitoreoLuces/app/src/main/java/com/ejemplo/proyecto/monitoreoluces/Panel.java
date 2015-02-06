@@ -65,7 +65,7 @@ public class Panel extends ActionBarActivity {
 
 
 
-            if(i==0) {                                                          //comprobacion bit 0
+            if(i==4) {                                                          //comprobacion bit 0
 
                 Log.e("largo bitparse", String.valueOf(bitparse.length()));
                 if (bitparse.equals(snumero)){                                  //Comparacion ==1
@@ -75,7 +75,7 @@ public class Panel extends ActionBarActivity {
             }
 
         //------------------------------------------------------------------------------------------------------------------------------------
-            if(i==1) {                                                          //comprobacion bit 1
+            if(i==5) {                                                          //comprobacion bit 1
 
                 Log.e("largo bitparse", String.valueOf(bitparse.length()));
                 if (bitparse.equals(snumero)){                                  //Comparacion ==1
@@ -85,7 +85,7 @@ public class Panel extends ActionBarActivity {
             }
 
         //------------------------------------------------------------------------------------------------------------------------------------
-            if(i==2) {                                                          //comprobacion bit 2
+            if(i==6) {                                                          //comprobacion bit 2
 
                 Log.e("largo bitparse", String.valueOf(bitparse.length()));
                 if (bitparse.equals(snumero)){                                  //Comparacion ==1
@@ -95,7 +95,7 @@ public class Panel extends ActionBarActivity {
             }
 
         //------------------------------------------------------------------------------------------------------------------------------------
-            if(i==3) {                                                          //comprobacion bit 3
+            if(i==7) {                                                          //comprobacion bit 3
 
                 Log.e("largo bitparse", String.valueOf(bitparse.length()));
                 if (bitparse.equals(snumero)){                                  //Comparacion ==1
@@ -105,7 +105,7 @@ public class Panel extends ActionBarActivity {
             }
 
         //------------------------------------------------------------------------------------------------------------------------------------
-            if(i==4) {                                                          //comprobacion bit 4
+            if(i==8) {                                                          //comprobacion bit 4
 
                 Log.e("largo bitparse", String.valueOf(bitparse.length()));
                 if (bitparse.equals(snumero)){                                  //Comparacion ==1
@@ -115,7 +115,7 @@ public class Panel extends ActionBarActivity {
             }
 
         //------------------------------------------------------------------------------------------------------------------------------------
-            if(i==5) {                                                          //comprobacion bit 5
+            if(i==9) {                                                          //comprobacion bit 5
 
                 Log.e("largo bitparse", String.valueOf(bitparse.length()));
                 if (bitparse.equals(snumero)){                                  //Comparacion ==1
@@ -125,7 +125,7 @@ public class Panel extends ActionBarActivity {
             }
 
         //------------------------------------------------------------------------------------------------------------------------------------
-            if(i==6) {                                                          //comprobacion bit 6
+            if(i==10) {                                                          //comprobacion bit 6
                 Log.e("largo bitparse", String.valueOf(bitparse.length()));
                 if (bitparse.equals(snumero)){                                  //Comparacion ==1
                     Log.e("TAG", "if 2");
@@ -134,7 +134,7 @@ public class Panel extends ActionBarActivity {
             }
 
         //------------------------------------------------------------------------------------------------------------------------------------
-            if(i==7) {                                                          //comprobacion bit 1
+            if(i==11) {                                                          //comprobacion bit 1
 
                 Log.e("largo bitparse", String.valueOf(bitparse.length()));
                 if (bitparse.equals(snumero)){                                  //Comparacion ==1
@@ -152,95 +152,6 @@ public class Panel extends ActionBarActivity {
             public void onClick(View arg0){
                 int numero2=1;
                 String snumero2= String.valueOf(numero2);
-                String bitcomparar= String.valueOf(parseo[0]);
-
-
-                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
-                    char numeroaux='0';
-                    parseo[0] = numeroaux;                      //Si es 1 lo cambia a 0
-                    mostrar.setText(String.valueOf(parseo));
-                } else {
-                    char numeroaux='1';
-                    parseo[0] = numeroaux;                      //Caso contario 0->1
-                    mostrar.setText(String.valueOf(parseo));
-                    }
-            }
-        });
-
-        // OnCLick boton 2 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-        boton2.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View arg0){
-                int numero2=1;
-                String snumero2= String.valueOf(numero2);
-                String bitcomparar= String.valueOf(parseo[1]);
-
-
-                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
-                    char numeroaux='0';
-                    parseo[1] = numeroaux;                      //Si es 1 lo cambia a 0
-                    mostrar.setText(String.valueOf(parseo));
-                } else {
-                    char numeroaux='1';
-                    parseo[1] = numeroaux;                      //Caso contario 0->1
-                    mostrar.setText(String.valueOf(parseo));
-                }
-            }
-        });
-
-        // OnCLick boton 3 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-        boton3.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View arg0){
-                int numero2=1;
-                String snumero2= String.valueOf(numero2);
-                String bitcomparar= String.valueOf(parseo[2]);
-
-
-                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
-                    char numeroaux='0';
-                    parseo[2] = numeroaux;                      //Si es 1 lo cambia a 0
-                    mostrar.setText(String.valueOf(parseo));
-                } else {
-                    char numeroaux='1';
-                    parseo[2] = numeroaux;                      //Caso contario 0->1
-                    mostrar.setText(String.valueOf(parseo));
-                }
-            }
-        });
-
-        // OnCLick boton 4 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-        boton4.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View arg0){
-                int numero2=1;
-                String snumero2= String.valueOf(numero2);
-                String bitcomparar= String.valueOf(parseo[3]);
-
-
-                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
-                    char numeroaux='0';
-                    parseo[3] = numeroaux;                      //Si es 1 lo cambia a 0
-                    mostrar.setText(String.valueOf(parseo));
-                } else {
-                    char numeroaux='1';
-                    parseo[3] = numeroaux;                      //Caso contario 0->1
-                    mostrar.setText(String.valueOf(parseo));
-                }
-            }
-        });
-
-
-        // OnCLick boton 5 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-        boton5.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View arg0){
-                int numero2=1;
-                String snumero2= String.valueOf(numero2);
                 String bitcomparar= String.valueOf(parseo[4]);
 
 
@@ -252,14 +163,13 @@ public class Panel extends ActionBarActivity {
                     char numeroaux='1';
                     parseo[4] = numeroaux;                      //Caso contario 0->1
                     mostrar.setText(String.valueOf(parseo));
-                }
+                    }
             }
         });
 
+        // OnCLick boton 2 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        // OnCLick boton 6 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-        boton6.setOnClickListener(new View.OnClickListener() {
+        boton2.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0){
                 int numero2=1;
@@ -279,9 +189,9 @@ public class Panel extends ActionBarActivity {
             }
         });
 
-        // OnCLick boton 7 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // OnCLick boton 3 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        boton7.setOnClickListener(new View.OnClickListener() {
+        boton3.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0){
                 int numero2=1;
@@ -301,9 +211,9 @@ public class Panel extends ActionBarActivity {
             }
         });
 
-        // OnCLick boton 2 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // OnCLick boton 4 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        boton8.setOnClickListener(new View.OnClickListener() {
+        boton4.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0){
                 int numero2=1;
@@ -318,6 +228,96 @@ public class Panel extends ActionBarActivity {
                 } else {
                     char numeroaux='1';
                     parseo[7] = numeroaux;                      //Caso contario 0->1
+                    mostrar.setText(String.valueOf(parseo));
+                }
+            }
+        });
+
+
+        // OnCLick boton 5 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        boton5.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0){
+                int numero2=1;
+                String snumero2= String.valueOf(numero2);
+                String bitcomparar= String.valueOf(parseo[8]);
+
+
+                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
+                    char numeroaux='0';
+                    parseo[8] = numeroaux;                      //Si es 1 lo cambia a 0
+                    mostrar.setText(String.valueOf(parseo));
+                } else {
+                    char numeroaux='1';
+                    parseo[8] = numeroaux;                      //Caso contario 0->1
+                    mostrar.setText(String.valueOf(parseo));
+                }
+            }
+        });
+
+
+        // OnCLick boton 6 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        boton6.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0){
+                int numero2=1;
+                String snumero2= String.valueOf(numero2);
+                String bitcomparar= String.valueOf(parseo[9]);
+
+
+                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
+                    char numeroaux='0';
+                    parseo[9] = numeroaux;                      //Si es 1 lo cambia a 0
+                    mostrar.setText(String.valueOf(parseo));
+                } else {
+                    char numeroaux='1';
+                    parseo[9] = numeroaux;                      //Caso contario 0->1
+                    mostrar.setText(String.valueOf(parseo));
+                }
+            }
+        });
+
+        // OnCLick boton 7 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        boton7.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0){
+                int numero2=1;
+                String snumero2= String.valueOf(numero2);
+                String bitcomparar= String.valueOf(parseo[10]);
+
+
+                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
+                    char numeroaux='0';
+                    parseo[10] = numeroaux;                      //Si es 1 lo cambia a 0
+                    mostrar.setText(String.valueOf(parseo));
+                } else {
+                    char numeroaux='1';
+                    parseo[10] = numeroaux;                      //Caso contario 0->1
+                    mostrar.setText(String.valueOf(parseo));
+                }
+            }
+        });
+
+        // OnCLick boton 2 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        boton8.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0){
+                int numero2=1;
+                String snumero2= String.valueOf(numero2);
+                String bitcomparar= String.valueOf(parseo[11]);
+
+
+                if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
+                    char numeroaux='0';
+                    parseo[11] = numeroaux;                      //Si es 1 lo cambia a 0
+                    mostrar.setText(String.valueOf(parseo));
+                } else {
+                    char numeroaux='1';
+                    parseo[11] = numeroaux;                      //Caso contario 0->1
                     mostrar.setText(String.valueOf(parseo));
                 }
             }
