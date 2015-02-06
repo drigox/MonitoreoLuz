@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,11 +50,12 @@ public class Inicio extends ActionBarActivity {
                     Toast.makeText(Inicio.this, "IP no escrita", Toast.LENGTH_SHORT).show();
                 }
 
-                MyClientTask myClientTask = new MyClientTask(ip
-                        .getText().toString(), port,
+                MyClientTask myClientTask = new MyClientTask(ip.getText().toString(),
+                        port,
                         tMsg);
                 myClientTask.execute();
 
+                Toast.makeText(Inicio.this, textResponse.getText().toString(), Toast.LENGTH_SHORT).show();
 
              /*   Intent i = new Intent(Inicio.this, Panel.class);
                 // Bundle para enviar los datos a la otra vista
@@ -64,13 +66,11 @@ public class Inicio extends ActionBarActivity {
             }
         };
 
-    
-
         public class MyClientTask extends AsyncTask<Void, Void, Void> {
 
             String dstAddress;
             int dstPort;
-            String response = "";
+            String response = "1";
             String msgToServer;
 
             MyClientTask(String addr, int port, String msgTo) {
