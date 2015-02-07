@@ -195,20 +195,20 @@ public class Panel extends ActionBarActivity {
                 String snumero2 = String.valueOf(numero2);
                 String bitcomparar = String.valueOf(parseo[5]);
                 int port= 8080;
-                String ip="192.168.1.111";
+              //  String ip="192.168.1.111";
 
 
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[5] = numeroaux;                      //Si es 1 lo cambia a 0
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[5] = numeroaux;                      //Caso contario 0->1
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }
             }
@@ -223,20 +223,20 @@ public class Panel extends ActionBarActivity {
                 String snumero2 = String.valueOf(numero2);
                 String bitcomparar = String.valueOf(parseo[6]);
                 int port= 8080;
-                String ip="192.168.1.111";
+                //String ip="192.168.1.111";
 
 
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[6] = numeroaux;                      //Si es 1 lo cambia a 0
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[6] = numeroaux;                      //Caso contario 0->1
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }
             }
@@ -251,20 +251,20 @@ public class Panel extends ActionBarActivity {
                 String snumero2 = String.valueOf(numero2);
                 String bitcomparar = String.valueOf(parseo[7]);
                 int port= 8080;
-                String ip="192.168.1.111";
+                //String ip="192.168.1.111";
 
 
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[7] = numeroaux;                      //Si es 1 lo cambia a 0
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[7] = numeroaux;                      //Caso contario 0->1
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }
             }
@@ -280,20 +280,20 @@ public class Panel extends ActionBarActivity {
                 String snumero2 = String.valueOf(numero2);
                 String bitcomparar = String.valueOf(parseo[8]);
                 int port= 8080;
-                String ip="192.168.1.111";
+                //String ip="192.168.1.111";
 
 
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[8] = numeroaux;                      //Si es 1 lo cambia a 0
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[8] = numeroaux;                      //Caso contario 0->1
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }
             }
@@ -309,20 +309,20 @@ public class Panel extends ActionBarActivity {
                 String snumero2 = String.valueOf(numero2);
                 String bitcomparar = String.valueOf(parseo[9]);
                 int port= 8080;
-                String ip="192.168.1.111";
+                //String ip="192.168.1.111";
 
 
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[9] = numeroaux;                      //Si es 1 lo cambia a 0
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[9] = numeroaux;                      //Caso contario 0->1
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }
             }
@@ -337,20 +337,20 @@ public class Panel extends ActionBarActivity {
                 String snumero2 = String.valueOf(numero2);
                 String bitcomparar = String.valueOf(parseo[10]);
                 int port= 8080;
-                String ip="192.168.1.111";
+                //String ip="192.168.1.111";
 
 
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[10] = numeroaux;                      //Si es 1 lo cambia a 0
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[10] = numeroaux;                      //Caso contario 0->1
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }
             }
@@ -365,20 +365,20 @@ public class Panel extends ActionBarActivity {
                 String snumero2 = String.valueOf(numero2);
                 String bitcomparar = String.valueOf(parseo[11]);
                 int port= 8080;
-                String ip="192.168.1.111";
+                //String ip="192.168.1.111";
 
 
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[11] = numeroaux;                      //Si es 1 lo cambia a 0
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[11] = numeroaux;                      //Caso contario 0->1
                     mostrar.setText(String.valueOf(parseo));
-                    MyClientTask myClientTask = new MyClientTask(ip,port,String.valueOf(parseo));
+                    MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }
             }
