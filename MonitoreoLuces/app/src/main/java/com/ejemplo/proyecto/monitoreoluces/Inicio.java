@@ -53,10 +53,12 @@ public class Inicio extends ActionBarActivity {
                     Toast.makeText(Inicio.this, "IP no escrita", Toast.LENGTH_SHORT).show(); //
                 }
 
+
                 MyClientTask myClientTask = new MyClientTask(ip.getText().toString(),
                         port,
                         tMsg);
                 myClientTask.execute();
+
 
 
             }
@@ -140,13 +142,14 @@ public class Inicio extends ActionBarActivity {
 
                 Toast.makeText(Inicio.this, response, Toast.LENGTH_SHORT).show();
 
-
+            if (response.length()==17){
              Intent i = new Intent(Inicio.this, Panel.class);
                 // Bundle para enviar los datos a la otra vista
                 Bundle datos = new Bundle();
-               datos.putString("datos", response);
-               i.putExtras(datos);
-                startActivity(i);
+
+               i.putExtra("datos",response);
+               i.putExtra("ip", ip.getText().toString());
+               startActivity(i);}
 
             }
 
