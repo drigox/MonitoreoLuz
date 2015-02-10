@@ -41,8 +41,8 @@ public class Panel extends ActionBarActivity {
         Bundle bundle = this.getIntent().getExtras();
         String ip = bundle.getString("datos"); //Respuesta
         final String IPP= bundle.getString("ip");
-        mostrar = (TextView) findViewById(R.id.dato);
-        mostrar.setText(ip);
+        //mostrar = (TextView) findViewById(R.id.dato);
+        //mostrar.setText(ip);
 
         //Definicion del boton 1
         boton1 = (ToggleButton) findViewById(R.id.boton1);
@@ -170,7 +170,7 @@ public class Panel extends ActionBarActivity {
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[4] = numeroaux;                      //Si es 1 lo cambia a 0
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
 
@@ -178,7 +178,7 @@ public class Panel extends ActionBarActivity {
                 } else {
                     char numeroaux = '1';
                     parseo[4] = numeroaux;                      //Caso contario 0->1
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
 
@@ -201,13 +201,13 @@ public class Panel extends ActionBarActivity {
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[5] = numeroaux;                      //Si es 1 lo cambia a 0
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[5] = numeroaux;                      //Caso contario 0->1
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }
@@ -229,13 +229,13 @@ public class Panel extends ActionBarActivity {
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[6] = numeroaux;                      //Si es 1 lo cambia a 0
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[6] = numeroaux;                      //Caso contario 0->1
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }
@@ -257,13 +257,13 @@ public class Panel extends ActionBarActivity {
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[7] = numeroaux;                      //Si es 1 lo cambia a 0
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[7] = numeroaux;                      //Caso contario 0->1
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }
@@ -286,13 +286,13 @@ public class Panel extends ActionBarActivity {
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[8] = numeroaux;                      //Si es 1 lo cambia a 0
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[8] = numeroaux;                      //Caso contario 0->1
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }
@@ -315,13 +315,13 @@ public class Panel extends ActionBarActivity {
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[9] = numeroaux;                      //Si es 1 lo cambia a 0
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[9] = numeroaux;                      //Caso contario 0->1
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }
@@ -343,13 +343,13 @@ public class Panel extends ActionBarActivity {
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[10] = numeroaux;                      //Si es 1 lo cambia a 0
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[10] = numeroaux;                      //Caso contario 0->1
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }
@@ -371,13 +371,13 @@ public class Panel extends ActionBarActivity {
                 if (bitcomparar.equals(snumero2)) {             // revisa estado boton =1
                     char numeroaux = '0';
                     parseo[11] = numeroaux;                      //Si es 1 lo cambia a 0
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 } else {
                     char numeroaux = '1';
                     parseo[11] = numeroaux;                      //Caso contario 0->1
-                    mostrar.setText(String.valueOf(parseo));
+                    //mostrar.setText(String.valueOf(parseo));
                     MyClientTask myClientTask = new MyClientTask(IPP,port,String.valueOf(parseo));
                     myClientTask.execute();
                 }

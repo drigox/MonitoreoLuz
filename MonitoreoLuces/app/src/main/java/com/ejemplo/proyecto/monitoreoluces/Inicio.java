@@ -26,6 +26,7 @@ public class Inicio extends ActionBarActivity {
     private EditText ip;    //IP que viene dada por el usuario
     int port= 8080;         //Puerto por defecto
     TextView textResponse;  //Respuesta desde el servidor
+    TextView texto1;
 
 
 
@@ -40,6 +41,7 @@ public class Inicio extends ActionBarActivity {
         ip = (EditText) findViewById(R.id.ip);                  //IP que viene dada por el usuario
 
 
+
         conectar.setOnClickListener(conectarOnClickListener); //Llamada a onClick
     }
 
@@ -50,7 +52,7 @@ public class Inicio extends ActionBarActivity {
                 String tMsg = ip.getText().toString();      //IP
                 if(tMsg.equals("")){                        //Comprobacion de mensaje a enviar
                     tMsg = null;
-                    Toast.makeText(Inicio.this, "IP no escrita", Toast.LENGTH_SHORT).show(); //
+                    Toast.makeText(Inicio.this, "Completar campo IP", Toast.LENGTH_SHORT).show(); //
                 }
 
 
