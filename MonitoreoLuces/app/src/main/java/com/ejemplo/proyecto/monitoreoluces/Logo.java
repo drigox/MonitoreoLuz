@@ -32,7 +32,7 @@ public class Logo extends Activity {
 
                 // Start the next activity
                 Intent mainIntent = new Intent().setClass(
-                        Logo.this, Panel.class);
+                        Logo.this, Inicio.class);
                 startActivity(mainIntent);
 
                 // Close the activity so the user won't able to go back this
