@@ -24,11 +24,17 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/boton"
-        android:gravity="center"
         android:id="@+id/conexion"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:text="Conectar"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:background="@drawable/buttonshape"
+        android:layout_below="@+id/ip"
+        android:layout_marginTop="111dp"
+        android:layout_alignLeft="@+id/ip"
+        android:layout_alignStart="@+id/ip"
+        android:layout_alignRight="@+id/ip"
+        android:layout_alignEnd="@+id/ip" />
 
     <TextView
         android:id="@+id/response"
@@ -36,6 +42,7 @@
         android:layout_height="wrap_content"/>
 
 
+<<<<<<< Updated upstream
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,4 +57,6 @@
         android:layout_alignRight="@+id/ip"
         android:layout_alignEnd="@+id/ip" />
 
+=======
+>>>>>>> Stashed changes
 </RelativeLayout>
