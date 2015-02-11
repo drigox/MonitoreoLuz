@@ -11,8 +11,6 @@
         android:orientation="vertical">
 
 
-
-
     <!--android:text="Tablero 1"-->
 
         <LinearLayout
@@ -37,14 +35,10 @@
                 android:text="1"
                 android:id="@+id/textView1"
                 android:layout_gravity="center"
-<<<<<<< Updated upstream
+                android:textSize="30sp"
                 android:textColor="#ffffff"
                 android:paddingLeft="10dp"/>
-=======
-                android:textSize="30sp"
-                android:paddingLeft="10dp"
-                android:textColor="#ffffff" />
->>>>>>> Stashed changes
+
 
             <ToggleButton
                 android:textOn=""
@@ -200,6 +194,7 @@
             android:paddingLeft="10dp" />
 
     </LinearLayout>
+
 </LinearLayout>
 </ScrollView>
 
