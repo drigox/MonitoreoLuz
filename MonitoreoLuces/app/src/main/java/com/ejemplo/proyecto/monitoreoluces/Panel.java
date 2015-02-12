@@ -69,7 +69,7 @@ public class Panel extends ActionBarActivity {
                 dataOutputStream = new DataOutputStream(
                         socket.getOutputStream());
                 dataInputStream = new DataInputStream(socket.getInputStream());
-                // dataOutputStream.writeUTF(name); // envia el nombre de usuario
+                dataOutputStream.writeUTF("Hola Salas"); // envia el nombre de usuario
                 dataOutputStream.flush();
 
                 while (!goOut) {
