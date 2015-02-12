@@ -16,7 +16,6 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 
-
 public class Panel extends ActionBarActivity {
 
     ToggleButton boton1, boton2, boton3, boton4, boton5, boton6, boton7, boton8;
@@ -27,10 +26,10 @@ public class Panel extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panel);
 
-        /* obtener la info enviada por el bundle*/
+ /* obtener la info enviada por el bundle*/
         Bundle bundle = this.getIntent().getExtras();
-        String ip = bundle.getString("ip");                 //Recibir la ip enviada de la otra vista
-        String port = bundle.getString("port");             //Recibir el puerto enviado de la otra vista
+        String ip = bundle.getString("ip"); //Recibir la ip enviada de la otra vista
+        String port = bundle.getString("port"); //Recibir el puerto enviado de la otra vista
 
         String msgLog = "";
 
@@ -53,6 +52,9 @@ public class Panel extends ActionBarActivity {
         String dstAddress;
         int dstPort;
 
+        public String msgLog = "";
+
+
         String msgToSend = "";
         boolean goOut = false;
 
@@ -72,7 +74,7 @@ public class Panel extends ActionBarActivity {
                 dataOutputStream = new DataOutputStream(
                         socket.getOutputStream());
                 dataInputStream = new DataInputStream(socket.getInputStream());
-                //   dataOutputStream.writeUTF(name);                                    // envia el nombre de usuario
+                // dataOutputStream.writeUTF(name); // envia el nombre de usuario
                 dataOutputStream.flush();
 
                 while (!goOut) {

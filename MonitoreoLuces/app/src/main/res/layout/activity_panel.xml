@@ -38,7 +38,7 @@
                 android:textSize="30sp"
                 android:textColor="#ffffff"
                 android:paddingLeft="10dp"/>
-
+                android:paddingLeft="10dp" />
 
             <ToggleButton
                 android:textOn=""
