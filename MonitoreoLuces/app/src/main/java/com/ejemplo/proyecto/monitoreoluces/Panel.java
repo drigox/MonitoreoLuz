@@ -1,11 +1,8 @@
 package com.ejemplo.proyecto.monitoreoluces;
 
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -30,7 +27,7 @@ public class Panel extends ActionBarActivity {
         Bundle bundle = this.getIntent().getExtras();
         String ip = bundle.getString("ip"); //Recibir la ip enviada de la otra vista
         String port = bundle.getString("port"); //Recibir el puerto enviado de la otra vista
-
+        TextView chatMsg = (TextView) findViewById(R.id.chatmsg);
         String msgLog = "";
 
         //Definicion del boton 1
@@ -51,10 +48,7 @@ public class Panel extends ActionBarActivity {
 
         String dstAddress;
         int dstPort;
-
         public String msgLog = "";
-
-
         String msgToSend = "";
         boolean goOut = false;
 
@@ -78,9 +72,17 @@ public class Panel extends ActionBarActivity {
                 dataOutputStream.flush();
 
                 while (!goOut) {
+
                     if (dataInputStream.available() > 0) {
                         msgLog += dataInputStream.readUTF();
 
+                        Panel.this.runOnUiThread(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                chatMsg.setText(msgLog);
+                            }
+                        });
 
                     }
 
