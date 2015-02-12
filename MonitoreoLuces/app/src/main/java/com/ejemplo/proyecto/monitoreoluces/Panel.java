@@ -20,7 +20,7 @@ import java.net.UnknownHostException;
 public class Panel extends ActionBarActivity {
 
     ToggleButton boton1, boton2, boton3, boton4, boton5, boton6, boton7, boton8;
-
+    ChatClientThread chatClientThread = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,10 +29,10 @@ public class Panel extends ActionBarActivity {
 
         /* obtener la info enviada por el bundle*/
         Bundle bundle = this.getIntent().getExtras();
-        String ip = bundle.getString("ip"); //Respuesta
-        String port = bundle.getString("port");
-        final String IPP = bundle.getString("ip");
+        String ip = bundle.getString("ip");                 //Recibir la ip enviada de la otra vista
+        String port = bundle.getString("port");             //Recibir el puerto enviado de la otra vista
 
+        String msgLog = "";
 
         //Definicion del boton 1
         boton1 = (ToggleButton) findViewById(R.id.boton1);
@@ -44,24 +44,25 @@ public class Panel extends ActionBarActivity {
         boton7 = (ToggleButton) findViewById(R.id.boton7);
         boton8 = (ToggleButton) findViewById(R.id.boton8);
 
-        MyClientTask myClientTask = new MyClientTask(ip, Integer.parseInt(port));
-        myClientTask.execute();
+        chatClientThread = new ChatClientThread( ip, Integer.parseInt(port));
+        chatClientThread.start();
     }
 
-    public class MyClientTask extends AsyncTask<Void, Void, Void> {
+    private class ChatClientThread extends Thread {
 
         String dstAddress;
         int dstPort;
-        String response = "";
 
-        MyClientTask(String addr, int port) {
-            dstAddress = addr;
+        String msgToSend = "";
+        boolean goOut = false;
+
+        ChatClientThread(String address, int port) {
+            dstAddress = address;
             dstPort = port;
         }
 
         @Override
-        protected Void doInBackground(Void... arg0) {
-
+        public void run() {
             Socket socket = null;
             DataOutputStream dataOutputStream = null;
             DataInputStream dataInputStream = null;
@@ -71,17 +72,46 @@ public class Panel extends ActionBarActivity {
                 dataOutputStream = new DataOutputStream(
                         socket.getOutputStream());
                 dataInputStream = new DataInputStream(socket.getInputStream());
+                //   dataOutputStream.writeUTF(name);                                    // envia el nombre de usuario
+                dataOutputStream.flush();
+
+                while (!goOut) {
+                    if (dataInputStream.available() > 0) {
+                        msgLog += dataInputStream.readUTF();
+
+
+                    }
+
+                    if(!msgToSend.equals("")){
+                        dataOutputStream.writeUTF(msgToSend);
+                        dataOutputStream.flush();
+                        msgToSend = "";
+                    }
+                }
 
             } catch (UnknownHostException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
-                response = "UnknownHostException: " + e.toString();
+                final String eString = e.toString();
+                Panel.this.runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        Toast.makeText(Panel.this, eString, Toast.LENGTH_LONG).show();
+                    }
+
+                });
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
-                response = "IOException: " + e.toString();
-            }
-            finally {
+                final String eString = e.toString();
+                Panel.this.runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        Toast.makeText(Panel.this, eString, Toast.LENGTH_LONG).show();
+                    }
+
+                });
+            } finally {
                 if (socket != null) {
                     try {
                         socket.close();
@@ -109,24 +139,14 @@ public class Panel extends ActionBarActivity {
                     }
                 }
             }
-            return null;
         }
 
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-
-            boton1.setOnClickListener(boton1OnclickListener);
+        private void sendMsg(String msg){
+            msgToSend = msg;
         }
 
-        View.OnClickListener boton1OnclickListener= new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-            }
-        };
-
+        private void disconnect(){
+            goOut = true;
+        }
     }
-
-    }
+}
