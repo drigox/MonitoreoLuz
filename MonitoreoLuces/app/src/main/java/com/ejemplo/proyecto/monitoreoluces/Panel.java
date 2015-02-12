@@ -17,6 +17,7 @@ public class Panel extends ActionBarActivity {
 
     ToggleButton boton1, boton2, boton3, boton4, boton5, boton6, boton7, boton8;
     ChatClientThread chatClientThread = null;
+    TextView chatMsg;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class Panel extends ActionBarActivity {
         Bundle bundle = this.getIntent().getExtras();
         String ip = bundle.getString("ip"); //Recibir la ip enviada de la otra vista
         String port = bundle.getString("port"); //Recibir el puerto enviado de la otra vista
-        TextView chatMsg = (TextView) findViewById(R.id.chatmsg);
+        chatMsg = (TextView) findViewById(R.id.chatmsg);
         String msgLog = "";
 
         //Definicion del boton 1
@@ -83,7 +84,6 @@ public class Panel extends ActionBarActivity {
                                 chatMsg.setText(msgLog);
                             }
                         });
-
                     }
 
                     if(!msgToSend.equals("")){
