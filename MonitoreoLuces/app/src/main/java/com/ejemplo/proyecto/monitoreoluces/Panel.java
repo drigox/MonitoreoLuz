@@ -53,7 +53,6 @@ public class Panel extends ActionBarActivity {
         String dstAddress;
         int dstPort;
         String response = "";
-        String msgToServer;
 
         MyClientTask(String addr, int port) {
             dstAddress = addr;
@@ -81,7 +80,8 @@ public class Panel extends ActionBarActivity {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
                 response = "IOException: " + e.toString();
-            } finally {
+            }
+            finally {
                 if (socket != null) {
                     try {
                         socket.close();
