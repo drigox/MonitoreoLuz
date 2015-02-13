@@ -3,6 +3,7 @@ package com.ejemplo.proyecto.monitoreoluces;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -84,13 +85,8 @@ public class Panel extends ActionBarActivity {
                     if (dataInputStream.available() > 0) {
                         //Toast.makeText(Panel.this, "prueba1", Toast.LENGTH_LONG).show();
 
-                        Byte b =dataInputStream.readByte();
 
-                        String value = new String(b, "UTF-8");
-
-                        String s = new String(b, "US-ASCII");
-
-                        msgLog =b;
+                        msgLog +=dataInputStream.readByte();
 
                             Panel.this.runOnUiThread(new Runnable() {
 
@@ -106,7 +102,19 @@ public class Panel extends ActionBarActivity {
 
                             @Override
                             public void run() {
-                                chatMsg.setText(msgLog);
+
+                                final char[] auxparseo = new char[msgLog.length()]; // char para parseo
+                                for (int i = 0; i < msgLog.length(); i++) {
+                                    auxparseo[i] = (char) msgLog.charAt(i); //parseo
+
+                                    String bitparse = String.valueOf(auxparseo[i]); // char paseo a string bitparse
+
+                                    Log.e("Taggggg", String.valueOf(auxparseo));
+                                    Log.e("Taggggg", String.valueOf(auxparseo[0]));
+                                }
+
+
+                                    chatMsg.setText(msgLog);
                             }
                         });
                     }
