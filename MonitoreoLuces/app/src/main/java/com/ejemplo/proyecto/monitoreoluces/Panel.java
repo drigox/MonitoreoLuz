@@ -4,6 +4,7 @@ package com.ejemplo.proyecto.monitoreoluces;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -48,7 +49,80 @@ public class Panel extends ActionBarActivity {
 
         chatClientThread = new ChatClientThread( ip, Integer.parseInt(port));
         chatClientThread.start();
+
+        boton1.setOnClickListener(boton1OnClickListener);
+        boton2.setOnClickListener(boton2OnClickListener);
+        boton3.setOnClickListener(boton3OnClickListener);
+        boton4.setOnClickListener(boton4OnClickListener);
+        boton5.setOnClickListener(boton5OnClickListener);
+        boton6.setOnClickListener(boton6OnClickListener);
+        boton7.setOnClickListener(boton7OnClickListener);
+        boton8.setOnClickListener(boton8OnClickListener);
     }
+
+    View.OnClickListener boton1OnClickListener= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            chatClientThread.sendMsg("*002001100110000#");
+
+        }
+    };
+
+    View.OnClickListener boton2OnClickListener= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            chatClientThread.sendMsg("*002001100110000#");
+
+        }
+    };
+
+    View.OnClickListener boton3OnClickListener= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            chatClientThread.sendMsg("*002001100110000#");
+
+        }
+    };
+
+    View.OnClickListener boton4OnClickListener= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            chatClientThread.sendMsg("*002001100110000#");
+
+        }
+    };
+
+    View.OnClickListener boton5OnClickListener= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            chatClientThread.sendMsg("*002001100110000#");
+
+        }
+    };
+
+    View.OnClickListener boton6OnClickListener= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            chatClientThread.sendMsg("*002001100110000#");
+
+        }
+    };
+
+    View.OnClickListener boton7OnClickListener= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            chatClientThread.sendMsg("*002001100110000#");
+
+        }
+    };
+
+    View.OnClickListener boton8OnClickListener= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            chatClientThread.sendMsg("*002001100110000#");
+
+        }
+    };
 
     private class ChatClientThread extends Thread {
 
@@ -89,6 +163,7 @@ public class Panel extends ActionBarActivity {
 
                         msgLog += dataInputStream.readByte();
 
+
                         String aux = "";
                         aux = msgLog;
 
@@ -109,18 +184,12 @@ public class Panel extends ActionBarActivity {
 
                             for (int i = 0; i < 34; i = i + 2) {
 
-
                                 if (i == 0) {
                                     auxparseo[0] = '*';
 
                                 } else {
-
                                     auxparseo[i / 2] = (char) aux.charAt(i + 1); //parseo
-
                                 }
-
-
-
 
                                 String respuesta = String.valueOf(auxparseo[i / 2]); // char paseo a string bitparse
                                 String num = "8";
@@ -146,7 +215,6 @@ public class Panel extends ActionBarActivity {
                             }
 
                             aux="";
-
 
 
                             final String finalAux = String.copyValueOf(auxparseo);
