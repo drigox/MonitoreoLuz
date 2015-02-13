@@ -82,41 +82,87 @@ public class Panel extends ActionBarActivity {
                 while (!goOut) {
 
 
+
                     if (dataInputStream.available() > 0) {
                         //Toast.makeText(Panel.this, "prueba1", Toast.LENGTH_LONG).show();
 
 
-                        msgLog +=dataInputStream.readByte();
+                        msgLog += dataInputStream.readByte();
 
-                            Panel.this.runOnUiThread(new Runnable() {
+                        String aux = "";
+                        aux = msgLog;
 
-                            @Override
-                            public void run() {
-                                Toast.makeText(Panel.this, "despues de readline", Toast.LENGTH_LONG).show();
-                            }
+                        final char[] auxparseo = new char[17]; // char para parseo
 
-                        });
+                        Log.i("tagql", "antes del FOOOOOOOOR");
+                        Log.d("tagql", msgLog);
+
+                        if (aux.length() >34) {
+                            aux="";
+                            msgLog="";
 
 
-                        Panel.this.runOnUiThread(new Runnable() {
+                        }
 
-                            @Override
-                            public void run() {
+                        if (aux.length() == 34) {
 
-                                final char[] auxparseo = new char[msgLog.length()]; // char para parseo
-                                for (int i = 0; i < msgLog.length(); i++) {
-                                    auxparseo[i] = (char) msgLog.charAt(i); //parseo
 
-                                    String bitparse = String.valueOf(auxparseo[i]); // char paseo a string bitparse
+                            for (int i = 0; i < 34; i = i + 2) {
 
-                                    Log.e("Taggggg", String.valueOf(auxparseo));
-                                    Log.e("Taggggg", String.valueOf(auxparseo[0]));
+
+                                if (i == 0) {
+                                    auxparseo[0] = '*';
+
+                                } else {
+
+                                    auxparseo[i / 2] = (char) aux.charAt(i + 1); //parseo
+
                                 }
 
 
-                                    chatMsg.setText(msgLog);
+
+
+                                String respuesta = String.valueOf(auxparseo[i / 2]); // char paseo a string bitparse
+                                String num = "8";
+                                if (respuesta.equals(num)) {
+                                    auxparseo[i / 2] = '0';
+                                }
+
+                                num = "9";
+                                if (respuesta.equals(num)) {
+                                    auxparseo[i / 2] = '1';
+                                }
+
+                                num="5";
+                                if (respuesta.equals(num)) {
+                                    auxparseo[i / 2] = '#';
+                                }
+
+
+
+                                Log.e("Taggggg", String.valueOf(auxparseo));
+                                Log.e("hahaha", String.valueOf(i / 2));
+
                             }
-                        });
+
+                            aux="";
+
+
+
+                            final String finalAux = String.copyValueOf(auxparseo);
+                            Panel.this.runOnUiThread(new Runnable() {
+
+                                @Override
+                                public void run() {
+
+                                    chatMsg.setText(finalAux);
+                                    msgLog = "";
+
+
+
+                                }
+                            });
+                        }
                     }
 
                     if(!msgToSend.equals("")){
