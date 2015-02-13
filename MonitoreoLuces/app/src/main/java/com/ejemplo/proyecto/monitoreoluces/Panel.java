@@ -85,17 +85,31 @@ public class Panel extends ActionBarActivity {
                 chatClientThread.sendMsg(String.valueOf(parseo));   //mensaje
             }
 
-
-
-
-
         }
     };
 
     View.OnClickListener boton2OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            chatClientThread.sendMsg("*002001100110000#");
+            int numero2 = 1;
+            String snumero2 = String.valueOf(numero2);
+            String bitcomparar = String.valueOf(parseo[5]);
+
+            if (bitcomparar.equals(snumero2)) { // revisa estado boton =1
+                char numeroaux = '0';
+                parseo[5] = numeroaux; //Si es 1 lo cambia a 0
+
+                chatClientThread.sendMsg(String.valueOf(parseo));           //mensaje que se envia con el bit cambiado
+            }
+
+            else {
+                char numeroaux = '1';
+                parseo[5] = numeroaux; //Caso contario 0->1
+
+
+                chatClientThread.sendMsg(String.valueOf(parseo));   //mensaje
+            }
+
 
         }
     };
