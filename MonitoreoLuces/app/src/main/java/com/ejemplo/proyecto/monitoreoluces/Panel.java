@@ -53,6 +53,7 @@ public class Panel extends ActionBarActivity {
         boton8 = (ToggleButton) findViewById(R.id.boton8);
         buttonDisconnect = (Button) findViewById(R.id.disconnect);
 
+
         chatClientThread = new ChatClientThread( ip, Integer.parseInt(port));
         chatClientThread.start();
 
@@ -64,7 +65,9 @@ public class Panel extends ActionBarActivity {
         boton6.setOnClickListener(boton6OnClickListener);
         boton7.setOnClickListener(boton7OnClickListener);
         boton8.setOnClickListener(boton8OnClickListener);
+
         buttonDisconnect.setOnClickListener(buttonDisconnectOnClickListener);
+
     }
 
     View.OnClickListener buttonDisconnectOnClickListener = new View.OnClickListener() {
@@ -83,6 +86,7 @@ public class Panel extends ActionBarActivity {
     View.OnClickListener boton1OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+
             int numero2 = 1;
             String snumero2 = String.valueOf(numero2);
             String bitcomparar = String.valueOf(parseo[4]);
@@ -98,8 +102,10 @@ public class Panel extends ActionBarActivity {
                 parseo[4] = numeroaux; //Caso contario 0->1
                 chatClientThread.sendMsg(String.valueOf(parseo));   //mensaje
             }
+
         }
     };
+
 
     View.OnClickListener boton2OnClickListener= new View.OnClickListener() {
         @Override
@@ -127,15 +133,48 @@ public class Panel extends ActionBarActivity {
     View.OnClickListener boton3OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            chatClientThread.sendMsg("*002001100110000#");
+            int numero2 = 1;
+            String snumero2 = String.valueOf(numero2);
+            String bitcomparar = String.valueOf(parseo[6]);
 
+            if (bitcomparar.equals(snumero2)) { // revisa estado boton =1
+                char numeroaux = '0';
+                parseo[6] = numeroaux; //Si es 1 lo cambia a 0
+
+                chatClientThread.sendMsg(String.valueOf(parseo));           //mensaje que se envia con el bit cambiado
+            }
+
+            else {
+                char numeroaux = '1';
+                parseo[6] = numeroaux; //Caso contario 0->1
+
+
+                chatClientThread.sendMsg(String.valueOf(parseo));   //mensaje
+            }
         }
     };
 
     View.OnClickListener boton4OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            chatClientThread.sendMsg("*002001100110000#");
+            int numero2 = 1;
+            String snumero2 = String.valueOf(numero2);
+            String bitcomparar = String.valueOf(parseo[7]);
+
+            if (bitcomparar.equals(snumero2)) { // revisa estado boton =1
+                char numeroaux = '0';
+                parseo[7] = numeroaux; //Si es 1 lo cambia a 0
+
+                chatClientThread.sendMsg(String.valueOf(parseo));           //mensaje que se envia con el bit cambiado
+            }
+
+            else {
+                char numeroaux = '1';
+                parseo[7] = numeroaux; //Caso contario 0->1
+
+
+                chatClientThread.sendMsg(String.valueOf(parseo));   //mensaje
+            }
 
         }
     };
@@ -143,7 +182,24 @@ public class Panel extends ActionBarActivity {
     View.OnClickListener boton5OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            chatClientThread.sendMsg("*002001100110000#");
+            int numero2 = 1;
+            String snumero2 = String.valueOf(numero2);
+            String bitcomparar = String.valueOf(parseo[8]);
+
+            if (bitcomparar.equals(snumero2)) { // revisa estado boton =1
+                char numeroaux = '0';
+                parseo[8] = numeroaux; //Si es 1 lo cambia a 0
+
+                chatClientThread.sendMsg(String.valueOf(parseo));           //mensaje que se envia con el bit cambiado
+            }
+
+            else {
+                char numeroaux = '1';
+                parseo[8] = numeroaux; //Caso contario 0->1
+
+
+                chatClientThread.sendMsg(String.valueOf(parseo));   //mensaje
+            }
 
         }
     };
@@ -151,7 +207,24 @@ public class Panel extends ActionBarActivity {
     View.OnClickListener boton6OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            chatClientThread.sendMsg("*002001100110000#");
+            int numero2 = 1;
+            String snumero2 = String.valueOf(numero2);
+            String bitcomparar = String.valueOf(parseo[9]);
+
+            if (bitcomparar.equals(snumero2)) { // revisa estado boton =1
+                char numeroaux = '0';
+                parseo[9] = numeroaux; //Si es 1 lo cambia a 0
+
+                chatClientThread.sendMsg(String.valueOf(parseo));           //mensaje que se envia con el bit cambiado
+            }
+
+            else {
+                char numeroaux = '1';
+                parseo[9] = numeroaux; //Caso contario 0->1
+
+
+                chatClientThread.sendMsg(String.valueOf(parseo));   //mensaje
+            }
 
         }
     };
@@ -159,7 +232,24 @@ public class Panel extends ActionBarActivity {
     View.OnClickListener boton7OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            chatClientThread.sendMsg("*002001100110000#");
+            int numero2 = 1;
+            String snumero2 = String.valueOf(numero2);
+            String bitcomparar = String.valueOf(parseo[10]);
+
+            if (bitcomparar.equals(snumero2)) { // revisa estado boton =1
+                char numeroaux = '0';
+                parseo[10] = numeroaux; //Si es 1 lo cambia a 0
+
+                chatClientThread.sendMsg(String.valueOf(parseo));           //mensaje que se envia con el bit cambiado
+            }
+
+            else {
+                char numeroaux = '1';
+                parseo[10] = numeroaux; //Caso contario 0->1
+
+
+                chatClientThread.sendMsg(String.valueOf(parseo));   //mensaje
+            }
 
         }
     };
@@ -167,7 +257,24 @@ public class Panel extends ActionBarActivity {
     View.OnClickListener boton8OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            chatClientThread.sendMsg("*002001100110000#");
+            int numero2 = 1;
+            String snumero2 = String.valueOf(numero2);
+            String bitcomparar = String.valueOf(parseo[11]);
+
+            if (bitcomparar.equals(snumero2)) { // revisa estado boton =1
+                char numeroaux = '0';
+                parseo[11] = numeroaux; //Si es 1 lo cambia a 0
+
+                chatClientThread.sendMsg(String.valueOf(parseo));           //mensaje que se envia con el bit cambiado
+            }
+
+            else {
+                char numeroaux = '1';
+                parseo[11] = numeroaux; //Caso contario 0->1
+
+
+                chatClientThread.sendMsg(String.valueOf(parseo));   //mensaje
+            }
 
         }
     };
@@ -196,24 +303,22 @@ public class Panel extends ActionBarActivity {
                 dataOutputStream = new DataOutputStream(
                         socket.getOutputStream());
                 dataInputStream = new DataInputStream(socket.getInputStream());
-                BufferedReader d= new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
                 dataOutputStream.writeBytes("*002000000000000#"); // envia el nombre de usuario
                 dataOutputStream.flush();
 
                 while (!goOut) {
 
+                    String aux = "";
+                    aux = msgLog;
 
 
-                    if (dataInputStream.available() > 0) {
+
+                /*    if (dataInputStream.available() > 0) {
                         //Toast.makeText(Panel.this, "prueba1", Toast.LENGTH_LONG).show();
 
 
                         msgLog += dataInputStream.readByte();
-
-
-                        String aux = "";
-                        aux = msgLog;
 
                         final char[] auxparseo = new char[17]; // char para parseo
 
@@ -255,6 +360,11 @@ public class Panel extends ActionBarActivity {
                                     auxparseo[i / 2] = '#';
                                 }
 
+                                num="0";
+                                if (respuesta.equals(num)) {
+                                    auxparseo[i / 2] = '2';
+                                }
+
 
 
                                 Log.e("Taggggg", String.valueOf(auxparseo));
@@ -279,7 +389,7 @@ public class Panel extends ActionBarActivity {
                                 }
                             });
                         }
-                    }
+                    }*/
 
                     if(!msgToSend.equals("")){
                         dataOutputStream.writeBytes(msgToSend);

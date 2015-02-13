@@ -54,6 +54,7 @@
         android:layout_alignEnd="@+id/port" />
 
 
+
     <TextView
         android:id="@+id/response"
         android:layout_width="wrap_content"
