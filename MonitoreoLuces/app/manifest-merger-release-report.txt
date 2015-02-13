@@ -1,0 +1,71 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:2:1
+	package
+		ADDED from AndroidManifest.xml:3:2
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:versionName
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
+	android:versionCode
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+uses-permission#android.permission.INTERNET
+ADDED from AndroidManifest.xml:4:2
+	android:name
+		ADDED from AndroidManifest.xml:4:19
+application
+ADDED from AndroidManifest.xml:6:2
+MERGED from com.android.support:appcompat-v7:21.0.3:16:5
+MERGED from com.android.support:support-v4:21.0.3:16:5
+	android:label
+		ADDED from AndroidManifest.xml:9:2
+	android:allowBackup
+		ADDED from AndroidManifest.xml:7:2
+	android:icon
+		ADDED from AndroidManifest.xml:8:2
+	android:theme
+		ADDED from AndroidManifest.xml:10:2
+activity#com.ejemplo.proyecto.monitoreoluces.Logo
+ADDED from AndroidManifest.xml:12:2
+	android:theme
+		ADDED from AndroidManifest.xml:14:2
+	android:name
+		ADDED from AndroidManifest.xml:13:2
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:15:2
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:16:2
+	android:name
+		ADDED from AndroidManifest.xml:16:10
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:18:2
+	android:name
+		ADDED from AndroidManifest.xml:18:12
+activity#com.ejemplo.proyecto.monitoreoluces.Inicio
+ADDED from AndroidManifest.xml:22:2
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:25:2
+	android:label
+		ADDED from AndroidManifest.xml:24:2
+	android:name
+		ADDED from AndroidManifest.xml:23:2
+activity#com.ejemplo.proyecto.monitoreoluces.Panel
+ADDED from AndroidManifest.xml:28:2
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:29:2
+	android:name
+		ADDED from AndroidManifest.xml:28:12
+uses-sdk
+INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
+MERGED from com.android.support:appcompat-v7:21.0.3:15:5
+MERGED from com.android.support:support-v4:21.0.3:15:5
+	android:targetSdkVersion
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
