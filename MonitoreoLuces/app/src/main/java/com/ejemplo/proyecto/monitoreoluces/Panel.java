@@ -24,6 +24,7 @@ public class Panel extends ActionBarActivity {
     ToggleButton boton1, boton2, boton3, boton4, boton5, boton6, boton7, boton8;
     ChatClientThread chatClientThread = null;
     TextView chatMsg;
+    char[] parseo = new char[17];
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,8 @@ public class Panel extends ActionBarActivity {
         chatMsg = (TextView) findViewById(R.id.chatmsg);
         String msgLog = "";
 
+
+        parseo = new char[]{'*', '0', '0', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '#'};
         //Definicion del boton 1
         boton1 = (ToggleButton) findViewById(R.id.boton1);
         boton2 = (ToggleButton) findViewById(R.id.boton2);
@@ -63,7 +66,28 @@ public class Panel extends ActionBarActivity {
     View.OnClickListener boton1OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            chatClientThread.sendMsg("*002001100110000#");
+            int numero2 = 1;
+            String snumero2 = String.valueOf(numero2);
+            String bitcomparar = String.valueOf(parseo[4]);
+
+            if (bitcomparar.equals(snumero2)) { // revisa estado boton =1
+                char numeroaux = '0';
+                parseo[4] = numeroaux; //Si es 1 lo cambia a 0
+
+                chatClientThread.sendMsg(String.valueOf(parseo));           //mensaje que se envia con el bit cambiado
+            }
+
+            else {
+                char numeroaux = '1';
+                parseo[4] = numeroaux; //Caso contario 0->1
+
+
+                chatClientThread.sendMsg(String.valueOf(parseo));   //mensaje
+            }
+
+
+
+
 
         }
     };
@@ -150,7 +174,7 @@ public class Panel extends ActionBarActivity {
                 dataInputStream = new DataInputStream(socket.getInputStream());
                 BufferedReader d= new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-                dataOutputStream.writeBytes("*002001100110000#"); // envia el nombre de usuario
+                dataOutputStream.writeBytes("*002000000000000#"); // envia el nombre de usuario
                 dataOutputStream.flush();
 
                 while (!goOut) {
