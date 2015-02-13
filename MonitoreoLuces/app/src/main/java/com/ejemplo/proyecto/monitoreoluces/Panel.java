@@ -6,9 +6,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StringWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -69,13 +73,34 @@ public class Panel extends ActionBarActivity {
                 dataOutputStream = new DataOutputStream(
                         socket.getOutputStream());
                 dataInputStream = new DataInputStream(socket.getInputStream());
-                dataOutputStream.writeUTF("Hola Salas"); // envia el nombre de usuario
+                BufferedReader d= new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+                dataOutputStream.writeBytes("*002001100110000#"); // envia el nombre de usuario
                 dataOutputStream.flush();
 
                 while (!goOut) {
 
+
                     if (dataInputStream.available() > 0) {
-                        msgLog += dataInputStream.readUTF();
+                        //Toast.makeText(Panel.this, "prueba1", Toast.LENGTH_LONG).show();
+
+                        Byte b =dataInputStream.readByte();
+
+                        String value = new String(b, "UTF-8");
+
+                        String s = new String(b, "US-ASCII");
+
+                        msgLog =b;
+
+                            Panel.this.runOnUiThread(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                Toast.makeText(Panel.this, "despues de readline", Toast.LENGTH_LONG).show();
+                            }
+
+                        });
+
 
                         Panel.this.runOnUiThread(new Runnable() {
 
@@ -87,7 +112,7 @@ public class Panel extends ActionBarActivity {
                     }
 
                     if(!msgToSend.equals("")){
-                        dataOutputStream.writeUTF(msgToSend);
+                        dataOutputStream.writeBytes(msgToSend);
                         dataOutputStream.flush();
                         msgToSend = "";
                     }
