@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -25,6 +26,7 @@ public class Panel extends ActionBarActivity {
     ChatClientThread chatClientThread = null;
     TextView chatMsg;
     char[] parseo = new char[17];
+    Button buttonDisconnect;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class Panel extends ActionBarActivity {
         boton6 = (ToggleButton) findViewById(R.id.boton6);
         boton7 = (ToggleButton) findViewById(R.id.boton7);
         boton8 = (ToggleButton) findViewById(R.id.boton8);
+        buttonDisconnect = (Button) findViewById(R.id.disconnect);
 
         chatClientThread = new ChatClientThread( ip, Integer.parseInt(port));
         chatClientThread.start();
@@ -61,7 +64,21 @@ public class Panel extends ActionBarActivity {
         boton6.setOnClickListener(boton6OnClickListener);
         boton7.setOnClickListener(boton7OnClickListener);
         boton8.setOnClickListener(boton8OnClickListener);
+        buttonDisconnect.setOnClickListener(buttonDisconnectOnClickListener);
     }
+
+    View.OnClickListener buttonDisconnectOnClickListener = new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            if(chatClientThread==null){
+                return;
+            }
+            chatClientThread.disconnect();
+            finish();
+        }
+
+    };
 
     View.OnClickListener boton1OnClickListener= new View.OnClickListener() {
         @Override
@@ -73,18 +90,14 @@ public class Panel extends ActionBarActivity {
             if (bitcomparar.equals(snumero2)) { // revisa estado boton =1
                 char numeroaux = '0';
                 parseo[4] = numeroaux; //Si es 1 lo cambia a 0
-
                 chatClientThread.sendMsg(String.valueOf(parseo));           //mensaje que se envia con el bit cambiado
             }
 
             else {
                 char numeroaux = '1';
                 parseo[4] = numeroaux; //Caso contario 0->1
-
-
                 chatClientThread.sendMsg(String.valueOf(parseo));   //mensaje
             }
-
         }
     };
 
@@ -106,11 +119,8 @@ public class Panel extends ActionBarActivity {
                 char numeroaux = '1';
                 parseo[5] = numeroaux; //Caso contario 0->1
 
-
                 chatClientThread.sendMsg(String.valueOf(parseo));   //mensaje
             }
-
-
         }
     };
 
