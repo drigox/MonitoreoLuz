@@ -1,6 +1,7 @@
 package com.ejemplo.proyecto.monitoreoluces;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -405,7 +406,10 @@ public class Panel extends ActionBarActivity {
 
                     @Override
                     public void run() {
-                        Toast.makeText(Panel.this, eString, Toast.LENGTH_LONG).show();
+                        //Toast.makeText(Panel.this, eString, Toast.LENGTH_LONG).show();
+                        Intent volver = new Intent(Panel.this, Inicio.class);
+                        startActivity(volver);
+                        finish();
                     }
 
                 });
