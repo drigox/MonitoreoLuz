@@ -406,7 +406,10 @@ public class Panel extends ActionBarActivity {
 
                     @Override
                     public void run() {
-                        Toast.makeText(Panel.this, eString, Toast.LENGTH_LONG).show();
+                        Toast.makeText(Panel.this, "No conecta", Toast.LENGTH_LONG).show();
+                        Intent volver = new Intent(Panel.this, Inicio.class);
+                        startActivity(volver);
+                        finish();
 
                     }
 
