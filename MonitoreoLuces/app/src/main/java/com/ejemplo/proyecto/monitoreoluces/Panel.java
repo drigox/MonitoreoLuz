@@ -188,7 +188,7 @@ public class Panel extends ActionBarActivity {
         @Override
         public void onClick(View v) {
 
-            chatClientThread.sendMsg("ip+port+estado");
+            conectserver.sendMsg("ip+port+estado");
             if(chatClientThread==null){
                 return;
             }
