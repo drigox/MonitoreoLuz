@@ -151,7 +151,6 @@ public class Inicio extends ActionBarActivity {
 
         @Override
         protected void onPostExecute(Void result) {
-            textResponse.setText(response);
             super.onPostExecute(result);
 
             Toast.makeText(Inicio.this, response, Toast.LENGTH_SHORT).show();
