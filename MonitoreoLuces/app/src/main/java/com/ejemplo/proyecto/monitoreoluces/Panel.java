@@ -25,6 +25,7 @@ public class Panel extends ActionBarActivity {
 
     ToggleButton boton1, boton2, boton3, boton4, boton5, boton6, boton7, boton8;
     ChatClientThread chatClientThread = null;
+    ChatClientThread conectserver = null;
     TextView chatMsg;
     char[] parseo = new char[17];
     Button buttonDisconnect;
@@ -39,6 +40,8 @@ public class Panel extends ActionBarActivity {
         String ip = bundle.getString("ip"); //Recibir la ip enviada de la otra vista
         String port = bundle.getString("port"); //Recibir el puerto enviado de la otra vista
         String estado0 = bundle.getString("estado0");
+        String ip_server= bundle.getString("ip_server");
+        String port_server = bundle.getString("port_server");
 
         chatMsg = (TextView) findViewById(R.id.chatmsg);
         String msgLog = "";
@@ -57,8 +60,13 @@ public class Panel extends ActionBarActivity {
         buttonDisconnect = (Button) findViewById(R.id.disconnect);
 
 
-        chatClientThread = new ChatClientThread( ip, Integer.parseInt(port));
+        chatClientThread = new ChatClientThread( ip, Integer.parseInt(port));   //llamado al nuevo thread
         chatClientThread.start();
+
+        conectserver = new ChatClientThread( ip_server, Integer.parseInt(port_server));
+        conectserver.start();
+
+
 
         final char[] parseo0 = new char[estado0.length()]; // char para parseo
         for (int i = 0; i < estado0.length(); i++) {
@@ -162,9 +170,6 @@ public class Panel extends ActionBarActivity {
 
         }
 
-
-
-
         boton1.setOnClickListener(boton1OnClickListener);
         boton2.setOnClickListener(boton2OnClickListener);
         boton3.setOnClickListener(boton3OnClickListener);
@@ -182,9 +187,12 @@ public class Panel extends ActionBarActivity {
 
         @Override
         public void onClick(View v) {
+
+            chatClientThread.sendMsg("ip+port+estado");
             if(chatClientThread==null){
                 return;
             }
+            conectserver.disconnect();
             chatClientThread.disconnect();
             finish();
         }

@@ -35,8 +35,7 @@ public class Inicio extends ActionBarActivity {
     TextView texto1;
     int puerto_server;
     TextView textResponse;
-    String Msgip;
-    String Msgport;
+    String Msgip, Msgport, Msgip_server, port_server;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +48,8 @@ public class Inicio extends ActionBarActivity {
         servidor = (EditText) findViewById(R.id.ip_server);
         port = (EditText)findViewById(R.id.port);
         puerto_server= 8080;
+        port_server = String.valueOf(puerto_server);
+
 
         conectar.setOnClickListener(conectarOnClickListener); //Llamada a onClick
     }
@@ -60,6 +61,7 @@ public class Inicio extends ActionBarActivity {
             String tMsg = "Conexion";
             Msgip = ip.getText().toString(); //IP
             Msgport = port.getText().toString();
+            Msgip_server = servidor.getText().toString();
 
             if(Msgip.equals("") || Msgport.equals("")){ //Comprobacion de mensaje a enviar
                 Msgip = null;
@@ -163,6 +165,8 @@ public class Inicio extends ActionBarActivity {
                 datos.putString("port", Msgport); // Almacenar IP y puerto en el bundle
                 datos.putString("ip", Msgip); // Almacenar IP y puerto en el bundle
                 datos.putString("estado0", response );
+                datos.putString("ip_server", Msgip_server);
+                datos.putString("port_server",port_server);
 
                 i.putExtras(datos); //Almacenar el Bundle en el intent para enviar
                 startActivity(i);
