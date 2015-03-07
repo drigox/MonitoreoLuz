@@ -84,7 +84,7 @@ public class Panel extends ActionBarActivity {
 
     };
 
-    View.OnClickListener boton1OnClickListener= new View.OnClickListener() {
+    View.OnClickListener boton8OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
@@ -108,7 +108,7 @@ public class Panel extends ActionBarActivity {
     };
 
 
-    View.OnClickListener boton2OnClickListener= new View.OnClickListener() {
+    View.OnClickListener boton7OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             int numero2 = 1;
@@ -131,7 +131,7 @@ public class Panel extends ActionBarActivity {
         }
     };
 
-    View.OnClickListener boton3OnClickListener= new View.OnClickListener() {
+    View.OnClickListener boton6OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             int numero2 = 1;
@@ -155,7 +155,7 @@ public class Panel extends ActionBarActivity {
         }
     };
 
-    View.OnClickListener boton4OnClickListener= new View.OnClickListener() {
+    View.OnClickListener boton5OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             int numero2 = 1;
@@ -180,7 +180,7 @@ public class Panel extends ActionBarActivity {
         }
     };
 
-    View.OnClickListener boton5OnClickListener= new View.OnClickListener() {
+    View.OnClickListener boton4OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             int numero2 = 1;
@@ -205,7 +205,7 @@ public class Panel extends ActionBarActivity {
         }
     };
 
-    View.OnClickListener boton6OnClickListener= new View.OnClickListener() {
+    View.OnClickListener boton3OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             int numero2 = 1;
@@ -230,7 +230,7 @@ public class Panel extends ActionBarActivity {
         }
     };
 
-    View.OnClickListener boton7OnClickListener= new View.OnClickListener() {
+    View.OnClickListener boton2OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             int numero2 = 1;
@@ -255,7 +255,7 @@ public class Panel extends ActionBarActivity {
         }
     };
 
-    View.OnClickListener boton8OnClickListener= new View.OnClickListener() {
+    View.OnClickListener boton1OnClickListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             int numero2 = 1;
