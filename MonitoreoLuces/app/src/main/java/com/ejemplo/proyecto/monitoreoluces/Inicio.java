@@ -41,7 +41,7 @@ public class Inicio extends ActionBarActivity {
         setContentView(R.layout.activity_inicio); //XML
 
         Button conectar = (Button) findViewById(R.id.conexion); //boton conectar
-        ip = (EditText) findViewById(R.id.ip); //IP que viene dada por el usuario
+        ip = (EditText) findViewById(R.id.ip_panel); //IP que viene dada por el usuario
         servidor = (EditText) findViewById(R.id.ip_server);
         port = (EditText)findViewById(R.id.port);
 
