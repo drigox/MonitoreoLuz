@@ -30,7 +30,7 @@ import java.net.UnknownHostException;
 
 public class Inicio extends ActionBarActivity {
 
-    private EditText ip; //IP que viene dada por el usuario
+    private EditText ip, servidor; //IP que viene dada por el usuario
     EditText port; //Puerto por defecto
     TextView texto1;
 
@@ -42,6 +42,7 @@ public class Inicio extends ActionBarActivity {
 
         Button conectar = (Button) findViewById(R.id.conexion); //boton conectar
         ip = (EditText) findViewById(R.id.ip); //IP que viene dada por el usuario
+        servidor = (EditText) findViewById(R.id.ip_server);
         port = (EditText)findViewById(R.id.port);
 
 

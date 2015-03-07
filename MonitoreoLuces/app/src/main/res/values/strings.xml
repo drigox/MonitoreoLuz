@@ -4,8 +4,9 @@
     <string name="app_name">BCONTROL LIGHTING</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="ip">Ingresar IP</string>
+    <string name="ip_panel">IP Panel</string>
+    <string name="ip_servidor">IP Servidor</string>
     <string name="boton">Conectar</string>
-    <string name="port">Ingresar puerto</string>
+    <string name="port">Puerto</string>
 
 </resources>
