@@ -38,6 +38,8 @@ public class Panel extends ActionBarActivity {
         Bundle bundle = this.getIntent().getExtras();
         String ip = bundle.getString("ip"); //Recibir la ip enviada de la otra vista
         String port = bundle.getString("port"); //Recibir el puerto enviado de la otra vista
+        String estado0 = bundle.getString("estado0");
+
         chatMsg = (TextView) findViewById(R.id.chatmsg);
         String msgLog = "";
 
@@ -57,6 +59,111 @@ public class Panel extends ActionBarActivity {
 
         chatClientThread = new ChatClientThread( ip, Integer.parseInt(port));
         chatClientThread.start();
+
+        final char[] parseo0 = new char[estado0.length()]; // char para parseo
+        for (int i = 0; i < estado0.length(); i++) {
+            parseo0[i] = (char) estado0.charAt(i); //parseo
+
+            String bitparse = String.valueOf(parseo0[i]); // char paseo a string bitparse
+
+            Log.e("Taggggg", String.valueOf(parseo0));
+            Log.e("Taggggg", String.valueOf(parseo0[0]));
+
+            int numero = 1;                                                   //numero para comparacion
+            String snumero = String.valueOf(numero);                         //tranformacion del numero a string para comparacion en if
+
+
+            if (i == 4) {                                                          //comprobacion bit 0
+
+                Log.e("largo bitparse", String.valueOf(bitparse.length()));
+                if (bitparse.equals(snumero)) {                                  //Comparacion ==1
+                    Log.e("TAG", "if 2");
+                    parseo[11]='1';
+                    boton1.performClick();                                      //Click forzado
+                }
+            }
+
+            //------------------------------------------------------------------------------------------------------------------------------------
+            if (i == 5) {                                                          //comprobacion bit 1
+
+                Log.e("largo bitparse", String.valueOf(bitparse.length()));
+                if (bitparse.equals(snumero)) {                                  //Comparacion ==1
+                    Log.e("TAG", "if 2");
+                    parseo[10]='1';
+                    boton2.performClick();                                      //Click forzado
+                }
+            }
+
+            //------------------------------------------------------------------------------------------------------------------------------------
+            if (i == 6) {                                                          //comprobacion bit 2
+
+                Log.e("largo bitparse", String.valueOf(bitparse.length()));
+                if (bitparse.equals(snumero)) {                                  //Comparacion ==1
+                    Log.e("TAG", "if 2");
+                    parseo[9]='1';
+                    boton3.performClick();                                      //Click forzado
+                }
+            }
+
+            //------------------------------------------------------------------------------------------------------------------------------------
+            if (i == 7) {                                                          //comprobacion bit 3
+
+                Log.e("largo bitparse", String.valueOf(bitparse.length()));
+                if (bitparse.equals(snumero)) {                                  //Comparacion ==1
+                    Log.e("TAG", "if 2");
+                    parseo[8]='1';
+                    boton4.performClick();                                      //Click forzado
+                }
+            }
+
+            //------------------------------------------------------------------------------------------------------------------------------------
+            if (i == 8) {                                                          //comprobacion bit 4
+
+                Log.e("largo bitparse", String.valueOf(bitparse.length()));
+                if (bitparse.equals(snumero)) {                                  //Comparacion ==1
+                    Log.e("TAG", "if 2");
+                    parseo[7]='1';
+                    boton5.performClick();                                      //Click forzado
+                }
+            }
+
+            //------------------------------------------------------------------------------------------------------------------------------------
+            if (i == 9) {                                                          //comprobacion bit 5
+
+                Log.e("largo bitparse", String.valueOf(bitparse.length()));
+                if (bitparse.equals(snumero)) {                                  //Comparacion ==1
+                    Log.e("TAG", "if 2");
+                    parseo[6]='1';
+                    boton6.performClick();                                      //Click forzado
+                }
+            }
+
+            //------------------------------------------------------------------------------------------------------------------------------------
+            if (i == 10) {                                                          //comprobacion bit 6
+                Log.e("largo bitparse", String.valueOf(bitparse.length()));
+                if (bitparse.equals(snumero)) {                                  //Comparacion ==1
+                    Log.e("TAG", "if 2");
+                    parseo[5]='1';
+                    boton7.performClick();                                      //Click forzado
+                }
+            }
+
+            //------------------------------------------------------------------------------------------------------------------------------------
+            if (i == 11) {                                                          //comprobacion bit 1
+
+                Log.e("largo bitparse", String.valueOf(bitparse.length()));
+                if (bitparse.equals(snumero)) {                                  //Comparacion ==1
+                    Log.e("TAG", "if 2");
+                    parseo[4]='1';
+                    boton8.performClick();                                      //Click forzado
+                }
+            }
+
+
+        }
+
+
+
 
         boton1.setOnClickListener(boton1OnClickListener);
         boton2.setOnClickListener(boton2OnClickListener);
@@ -305,7 +412,7 @@ public class Panel extends ActionBarActivity {
                         socket.getOutputStream());
                 dataInputStream = new DataInputStream(socket.getInputStream());
 
-                dataOutputStream.writeBytes("*002000000000000#"); // envia el nombre de usuario
+                //dataOutputStream.writeBytes("*002000000000000#"); // envia el nombre de usuario
                 dataOutputStream.flush();
 
                 while (!goOut) {
