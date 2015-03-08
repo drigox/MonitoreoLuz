@@ -211,6 +211,7 @@ public class Panel extends ActionBarActivity {
 
             i.putExtras(datos); //Almacenar el Bundle en el intent para enviar
             startActivity(i);
+            System.exit(0);
 
         }
 
