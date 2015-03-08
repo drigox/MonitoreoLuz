@@ -209,6 +209,7 @@ public class Panel extends ActionBarActivity {
 
             datos.putString("ip_server", ip_server );
             datos.putString("port_server",port_server);
+            datos.putString("cadenafinal", String.valueOf(parseo));
 
             i.putExtras(datos); //Almacenar el Bundle en el intent para enviar
             startActivity(i);

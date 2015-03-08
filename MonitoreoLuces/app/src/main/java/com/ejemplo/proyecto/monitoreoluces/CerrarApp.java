@@ -22,7 +22,7 @@ public class CerrarApp extends ActionBarActivity {
         Bundle bundle = this.getIntent().getExtras();
         String ip_server = bundle.getString("ip_server");
         String port_server = bundle.getString("port_server");
-        String tMsg = "mensaje final";
+        String tMsg = ip_server + port_server + bundle.getString("cadenafinal");
 
 
         MyClientTask myClientTask = new MyClientTask(ip_server
