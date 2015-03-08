@@ -192,6 +192,10 @@ public class Panel extends ActionBarActivity {
           //  String datosservidor= "ipportestado";
           //  conectserver.sendMsg(datosservidor);
 
+
+            //conectserver.sendMsg("ip+port+estado");
+
+
             if(chatClientThread==null){
                 return;
             }
@@ -208,6 +212,7 @@ public class Panel extends ActionBarActivity {
 
             i.putExtras(datos); //Almacenar el Bundle en el intent para enviar
             startActivity(i);
+
         }
 
     };

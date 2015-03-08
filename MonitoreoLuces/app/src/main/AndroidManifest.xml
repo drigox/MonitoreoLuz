@@ -27,6 +27,15 @@
  </activity>
  <activity android:name=".Panel"
  android:screenOrientation="portrait"/>
+
+<activity
+android:name=".CerrarApp"
+android:screenOrientation="portrait">
+
+</activity>
+
  </application>
+
+
 
 </manifest>

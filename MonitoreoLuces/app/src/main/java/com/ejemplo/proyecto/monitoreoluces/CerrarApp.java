@@ -13,7 +13,7 @@ import java.net.UnknownHostException;
 
 public class CerrarApp extends ActionBarActivity {
 
-    /* obtener la info enviada por el bundle*/
+ /* obtener la info enviada por el bundle*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class CerrarApp extends ActionBarActivity {
         MyClientTask myClientTask = new MyClientTask(ip_server
                 , Integer.parseInt(port_server), tMsg);
         myClientTask.execute();
+        //finish();
     }
 
     public class MyClientTask extends AsyncTask<Void, Void, Void> {
@@ -106,8 +107,9 @@ public class CerrarApp extends ActionBarActivity {
         protected void onPostExecute(Void result) {
 
             super.onPostExecute(result);
+            System.exit(0);
 
-            finish();
+            //finish();
 
 
         }
