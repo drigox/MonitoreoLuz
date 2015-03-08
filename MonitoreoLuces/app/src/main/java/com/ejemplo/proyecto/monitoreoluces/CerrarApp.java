@@ -107,6 +107,8 @@ public class CerrarApp extends ActionBarActivity {
 
             super.onPostExecute(result);
 
+            finish();
+
 
         }
 
