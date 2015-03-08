@@ -19,14 +19,17 @@ public class CerrarApp extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         Bundle bundle = this.getIntent().getExtras();
+        String ip= bundle.getString("ip");
         String ip_server = bundle.getString("ip_server");
-        String port_server = bundle.getString("port_server");
-        String tMsg = ip_server + "+" + port_server + "+" + bundle.getString("cadenafinal");
+        String port = bundle.getString("port");
+        String tMsg = ip + "+" + port + "+" + bundle.getString("cadenafinal");
+        int port_server =8080;
 
 
         MyClientTask myClientTask = new MyClientTask(ip_server
-                , Integer.parseInt(port_server), tMsg);
+                , port_server, tMsg);
         myClientTask.execute();
         //finish();
     }
@@ -107,9 +110,9 @@ public class CerrarApp extends ActionBarActivity {
         protected void onPostExecute(Void result) {
 
             super.onPostExecute(result);
-            System.exit(0);
 
-            //finish();
+            System.exit(0);
+           //finish();
 
 
         }
