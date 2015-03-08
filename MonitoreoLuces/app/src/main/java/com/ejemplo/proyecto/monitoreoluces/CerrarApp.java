@@ -18,7 +18,7 @@ public class CerrarApp extends ActionBarActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cerrar);
+        //setContentView(R.layout.activity_cerrar);
 
 
         Bundle bundle = this.getIntent().getExtras();
@@ -33,6 +33,11 @@ public class CerrarApp extends ActionBarActivity {
                 , port_server, tMsg);
         myClientTask.execute();
         //finish();
+
+        //for(int i=0; i<1000; i++)
+
+        //System.exit(0);
+
     }
 
     public class MyClientTask extends AsyncTask<Void, Void, Void> {
@@ -64,6 +69,17 @@ public class CerrarApp extends ActionBarActivity {
 
                 if (msgToServer != null) {
                     dataOutputStream.writeUTF(msgToServer);
+                    CerrarApp.this.runOnUiThread(new Runnable() {
+
+                        @Override
+                        public void run() {
+
+                           System.exit(0);
+
+
+
+                        }
+                    });
                 }
 
                 response = dataInputStream.readUTF();
@@ -104,7 +120,9 @@ public class CerrarApp extends ActionBarActivity {
                     }
                 }
             }
+            System.exit(0);
             return null;
+
         }
 
         @Override
@@ -112,7 +130,7 @@ public class CerrarApp extends ActionBarActivity {
 
             super.onPostExecute(result);
 
-            System.exit(0);
+            //System.exit(0);
            //finish();
 
 
