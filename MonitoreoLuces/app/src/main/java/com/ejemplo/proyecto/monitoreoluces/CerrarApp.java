@@ -18,6 +18,7 @@ public class CerrarApp extends ActionBarActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cerrar);
 
 
         Bundle bundle = this.getIntent().getExtras();
