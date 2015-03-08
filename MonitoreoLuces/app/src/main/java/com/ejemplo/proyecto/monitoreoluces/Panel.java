@@ -25,7 +25,7 @@ public class Panel extends ActionBarActivity {
 
     ToggleButton boton1, boton2, boton3, boton4, boton5, boton6, boton7, boton8;
     ChatClientThread chatClientThread = null;
-  //  ChatClientThread conectserver = null;
+    ChatClientThread conectserver = null;
     TextView chatMsg;
     char[] parseo = new char[17];
     Button buttonDisconnect;
@@ -64,8 +64,8 @@ public class Panel extends ActionBarActivity {
         chatClientThread = new ChatClientThread( ip, Integer.parseInt(port));   //llamado al nuevo thread
         chatClientThread.start();
 
-    //    conectserver = new ChatClientThread( ip_server, Integer.parseInt(port_server));
-    //    conectserver.start();
+        conectserver = new ChatClientThread( ip_server, Integer.parseInt(port_server));
+        conectserver.start();
 
 
 
@@ -189,20 +189,21 @@ public class Panel extends ActionBarActivity {
         @Override
         public void onClick(View v) {
 
-          //  String datosservidor= "ipportestado";
-          //  conectserver.sendMsg(datosservidor);
-
-
-            //conectserver.sendMsg("ip+port+estado");
+            //String datosservidor= "ipportestado";
+            conectserver.sendMsg(ip_server+ "+" + port_server + "+" + String.valueOf(parseo));
+         //   Toast.makeText(Panel.this, String.valueOf(parseo), Toast.LENGTH_LONG).show();
 
 
             if(chatClientThread==null){
                 return;
             }
-          //  conectserver.disconnect();
-            chatClientThread.disconnect();
-           // finish();
 
+            for (int j=0; j<1000; j++)
+            chatClientThread.disconnect();
+            conectserver.disconnect();
+
+            finish();
+/*
             Intent i = new Intent(Panel.this, CerrarApp.class);
             // Bundle para enviar los datos a la otra vista
             Bundle datos = new Bundle();
@@ -213,7 +214,7 @@ public class Panel extends ActionBarActivity {
 
             i.putExtras(datos); //Almacenar el Bundle en el intent para enviar
             startActivity(i);
-
+*/
         }
 
     };
